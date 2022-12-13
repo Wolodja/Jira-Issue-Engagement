@@ -1,0 +1,11 @@
+modules:
+  jira:issuePanel:
+    - key: jiraissueengagement-hello-world-panel
+      function: main
+      title: JiraIssueEngagement
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/b9afa6e8-68fa-4764-bbf7-07849a29e8ef
