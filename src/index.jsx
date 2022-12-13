@@ -1,6 +1,6 @@
 import ForgeUI, { render, Fragment, Text, IssuePanel } from '@forge/ui';
 
-const App = () => {
+const EngagementPanel = () => {
   return (
     <Fragment>
       <Text>Hello world!</Text>
@@ -8,8 +8,8 @@ const App = () => {
   );
 };
 
-export const run = render(
+export const panel = render(
   <IssuePanel>
-    <App />
+    <EngagementPanel />
   </IssuePanel>
 );
