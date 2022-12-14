@@ -17,6 +17,13 @@ modules:
     - key: engagement-trigger
       function: trigger
       events: [avi:jira:commented:issue]
+  webtrigger:
+    - key: emp-web-trigger
+      function: scheduled-trigger
+  scheduledTrigger:
+    - key: engagement-scheduled-trigger
+      function: scheduled-trigger
+      interval: hour
   function:
     - key: panel
       handler: index.panel
@@ -24,6 +31,8 @@ modules:
       handler: index.engagementOverview
     - key: trigger
       handler: index.trigger
+    - key: scheduled-trigger
+      handler: index.scheduledTrigger
 permissions:
   scopes:
     - 'read:jira-work'
