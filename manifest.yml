@@ -8,6 +8,11 @@ modules:
     - key: engagement-project-page
       title: Engagement Score Overview
       function: engagement-overview
+  jira:customField:
+    - key: engagement-score-field
+      type: number
+      name: Engagement Score
+      description: Engagement score for an issue
   function:
     - key: panel
       handler: index.panel
