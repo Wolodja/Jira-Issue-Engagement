@@ -1,4 +1,4 @@
-import ForgeUI, {render, ProjectPage, Fragment, Text, IssuePanel, useProductContext, useState} from '@forge/ui';
+import ForgeUI, {Table, Head, Row, Cell, render, ProjectPage, Fragment, Text, IssuePanel, useProductContext, useState} from '@forge/ui';
 import api, {route} from '@forge/api';
 
 const fetchNumberOfComments = async function (issueKey) {
@@ -44,9 +44,20 @@ const EngagementOverview = () => {
    const [issues] = useState(fetchIssueWithNumberOfComments(projectKey));
    console.log(JSON.stringify(issues));
     return (
-        <Fragment>
-            <Text>Overview goes here</Text>
-        </Fragment>
+        <Table>
+            <Head>
+                <Cell><Text>Issue Key</Text></Cell>
+                <Cell><Text>Summary</Text></Cell>
+                <Cell><Text>Engagement Score</Text></Cell>
+            </Head>
+            {issues.map(issue => (
+                <Row>
+                    <Cell><Text>{issue.key}</Text></Cell>
+                    <Cell><Text>{issue.summary}</Text></Cell>
+                    <Cell><Text>{issue.numComments}</Text></Cell>
+                </Row>
+            ))}
+        </Table>
     )
 }
 
